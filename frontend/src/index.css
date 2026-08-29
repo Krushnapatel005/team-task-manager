@@ -25,6 +25,14 @@ h1 { margin: 0; font-size: clamp(2.25rem, 6vw, 4rem); letter-spacing: -0.05em; }
 .card-heading h2 { margin: 0; font-size: 1.1rem; }
 .card-heading span, .task p, .note { color: #6b778c; }
 
+.card.top-row { margin-bottom: 20px; }
+.card-body { padding: 18px 24px 24px; }
+
+.backend-status .health { padding: 6px 10px; border-radius: 999px; font-weight: 700; font-size: 0.9rem; }
+.backend-status .health.ok { background: #e6fff0; color: #087f5b; border: 1px solid #c6f1da; }
+.backend-status .health.bad { background: #fff1f2; color: #b42318; border: 1px solid #ffd6d9; }
+.backend-status .health.unknown { background: #fbfbff; color: #4b5563; border: 1px solid #eef2ff; }
+
 .task-list { margin: 0; padding: 0; list-style: none; }
 .task { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 24px; border-bottom: 1px solid #edf0f5; }
 .task:last-child { border-bottom: 0; }
@@ -35,7 +43,27 @@ h1 { margin: 0; font-size: clamp(2.25rem, 6vw, 4rem); letter-spacing: -0.05em; }
 .note { margin: 22px 0 0; font-size: 0.9rem; }
 code { border-radius: 4px; background: #e8edf5; padding: 2px 5px; color: #334155; }
 
+/* Form styles */
+.task-form .form-row { display: grid; grid-template-columns: 1fr 1fr 160px 120px; gap: 12px; align-items: end; }
+.task-form label { display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; color: #28343f; }
+.task-form input, .task-form select { padding: 10px 12px; border-radius: 10px; border: 1px solid #e6ecf5; background: #fbfdff; font-size: 0.95rem; }
+.form-actions { display: flex; align-items: center; }
+.primary { background: #4355c7; color: #fff; border: none; padding: 10px 14px; border-radius: 10px; font-weight: 700; cursor: pointer; }
+.primary:hover { filter: brightness(0.98); }
+
+/* Task actions */
+.task-actions { display: flex; gap: 8px; align-items: center; }
+.task-actions select { padding: 8px 10px; border-radius: 10px; border: 1px solid #e6ecf5; background: #fff; }
+.danger { background: transparent; color: #b42318; border: 1px solid #ffd6d9; padding: 8px 10px; border-radius: 8px; cursor: pointer; }
+.danger:hover { background: #fff6f6; }
+
+/* Layout tweaks */
+.task-main { display: flex; gap: 12px; align-items: center; }
+
 @media (max-width: 520px) {
   .page { padding: 48px 18px; }
   .task { align-items: flex-start; flex-direction: column; gap: 12px; }
+  .task-form .form-row { grid-template-columns: 1fr; }
+  .form-actions { width: 100%; }
+  .card-body { padding: 12px 18px 18px; }
 }
